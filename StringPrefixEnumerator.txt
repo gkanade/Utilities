@@ -1,3 +1,19 @@
+I was working on an interesting problem at work today in which given a string of the form representing file paths say
+
+/a/b/c/d/e.txt
+
+I wanted to enumerate all prefixes that indicate either a subdirectory on the path or the file itself - so for e.g. the output should be
+/a
+/a/b
+/a/b/c
+/a/b/c/d
+/a/b/c/d/e.txt
+
+This seemed a simple and common enough issue that I expected to find implementation either in libraries of easily online. However it was not that obvious, so just noted down for my reference.
+
+I first use a common split method available in all libraries (should be O(n)) where n is length of string to get components
+
+Then iterate over these to get prefixes in linear time in terms of the number of components m 
 string[] nodeNames = s.Split('/');
                 string current = nodeNames.First();
                 for(int i = 1; i < nodeNames.Length; i++)
