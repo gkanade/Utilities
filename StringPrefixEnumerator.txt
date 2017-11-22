@@ -1,0 +1,8 @@
+string[] nodeNames = s.Split('/');
+                string current = nodeNames.First();
+                for(int i = 1; i < nodeNames.Length; i++)
+                {
+                    Console.WriteLine(current);
+                    current += "/" + nodeNames[i];
+                }
+                Console.WriteLine(current);
